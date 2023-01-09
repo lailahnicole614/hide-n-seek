@@ -7,9 +7,9 @@ const shedContainer = document.getElementById("shed-container");
 const treeContainer = document.getElementById("tree-container");
 const boulderContainer = document.getElementById("boulder-container");
 
-const totalEl = document.getElementById("total");
-const lossesEl = document.getElementById("losses");
-const winsEl = document.getElementById("wins");
+const correctGuessesEl = document.getElementById("correct-guesses");
+const incorrectGuessesEl = document.getElementById("incorrect-guesses");
+const totalGuessesEl = document.getElementById("total-guesses");
 
 let correctGuesses = 0;
 let incorrectGuesses = totalGuesses - correctGuesses;
