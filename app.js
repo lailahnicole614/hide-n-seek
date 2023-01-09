@@ -11,16 +11,20 @@ const correctGuessesEl = document.getElementById("correct-guesses");
 const incorrectGuessesEl = document.getElementById("incorrect-guesses");
 const totalGuessesEl = document.getElementById("total-guesses");
 
+/* State */
+let currentHidingPlace = null;
 let correctGuesses = 0;
-let incorrectGuesses = totalGuesses - correctGuesses;
+let incorrectGuesses = 0;
 let totalGuesses = 0;
 
+/*Events*/
 shedButton.addEventListener("click", () => {
   // get a random item to call the 'correct spot'
   // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 treeButton.addEventListener("click", () => {
+  treeContainer;
   // get a random item to call the 'correct spot'
   // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
