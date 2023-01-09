@@ -1,7 +1,7 @@
 // import functions and grab DOM elements
-const shedButton = document.getElementById("shed-button");
-const treeButton = document.getElementById("tree-button");
-const boulderButton = document.getElementById("boulder-button");
+const shedButtonEl = document.getElementById("shed-button");
+const treeButtonEl = document.getElementById("tree-button");
+const boulderButtonEl = document.getElementById("boulder-button");
 
 const shedContainer = document.getElementById("shed-container");
 const treeContainer = document.getElementById("tree-container");
