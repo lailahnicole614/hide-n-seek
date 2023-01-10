@@ -7,9 +7,9 @@ const shedContainer = document.getElementById("shed-container");
 const treeContainer = document.getElementById("tree-container");
 const boulderContainer = document.getElementById("boulder-container");
 
-const correctGuessesEl = document.getElementById("wins");
-const incorrectGuessesEl = document.getElementById("losses");
-const totalGuessesEl = document.getElementById("total");
+const correctGuessesEl = document.getElementById("correct-guesses");
+const incorrectGuessesEl = document.getElementById("incorrect-guesses");
+const totalGuessesEl = document.getElementById("total-guesses");
 
 /* State */
 let correctGuesses = 0;
@@ -35,9 +35,9 @@ treeButtonEl.addEventListener("click", () => {
 
 boulderButtonEl.addEventListener("click", () => {
   const correctSpot = getRandomHidingSpot();
-  handleGuess("boulder", correctSpot);
   // get a random item to call the 'correct spot'
   // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+  handleGuess("boulder", correctSpot);
 });
 
 // initialize state
@@ -52,6 +52,7 @@ const hidingPlaceString = hidingPlaces[index];
 
 function getRandomHidingSpot() {
   const places = ["tree", "boulder", "shed"];
+
   const index = Math.floor(Math.random() * places.length);
   const correctSpot = hidingPlaces[index];
   return correctSpot;
@@ -76,5 +77,5 @@ function handleGuess(userGuess, correctSpot) {
   // update the DOM to show the new value of wins, losses and total guesses to the user
   totalGuessesEl.textContent = totalGuesses;
   correctGuessesEl.textContent = correctGuesses;
-  incorrectGuessesEl.textContent = incorrectGuesses;
+  incorrectGuesses.textContent = correctGuesses;
 }
