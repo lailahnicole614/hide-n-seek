@@ -35,9 +35,9 @@ treeButtonEl.addEventListener("click", () => {
 
 boulderButtonEl.addEventListener("click", () => {
   const correctSpot = getRandomHidingSpot();
+  handleGuess("boulder", correctSpot);
   // get a random item to call the 'correct spot'
   // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
-  handleGuess("boulder", correctSpot);
 });
 
 // initialize state
@@ -64,6 +64,7 @@ function handleGuess(userGuess, correctSpot) {
   // we can do that by removing the .face class from all containers
   // then increment the guesses
   totalGuesses++;
+
   // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
   const correctHidingSpot = document.getElementById(`${correctSpot}-container`);
 
@@ -76,5 +77,5 @@ function handleGuess(userGuess, correctSpot) {
   // update the DOM to show the new value of wins, losses and total guesses to the user
   totalGuessesEl.textContent = totalGuesses;
   correctGuessesEl.textContent = correctGuesses;
-  incorrectGuessesEl.textContent = correctGuesses;
+  incorrectGuessesEl.textContent = incorrectGuesses;
 }
