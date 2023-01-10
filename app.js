@@ -64,7 +64,6 @@ function handleGuess(userGuess, correctSpot) {
   // we can do that by removing the .face class from all containers
   // then increment the guesses
   totalGuesses++;
-
   // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
   const correctHidingSpot = document.getElementById(`${correctSpot}-container`);
 
