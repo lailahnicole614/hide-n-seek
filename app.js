@@ -7,9 +7,9 @@ const shedContainer = document.getElementById("shed-container");
 const treeContainer = document.getElementById("tree-container");
 const boulderContainer = document.getElementById("boulder-container");
 
-const correctGuessesEl = document.getElementById("correct-guesses");
-const incorrectGuessesEl = document.getElementById("incorrect-guesses");
-const totalGuessesEl = document.getElementById("total-guesses");
+const correctGuessesEl = document.getElementById("wins");
+const incorrectGuessesEl = document.getElementById("losses");
+const totalGuessesEl = document.getElementById("total");
 
 /* State */
 let correctGuesses = 0;
@@ -77,5 +77,5 @@ function handleGuess(userGuess, correctSpot) {
   // update the DOM to show the new value of wins, losses and total guesses to the user
   totalGuessesEl.textContent = totalGuesses;
   correctGuessesEl.textContent = correctGuesses;
-  incorrectGuesses.textContent = correctGuesses;
+  incorrectGuessesEl.textContent = incorrectGuesses;
 }
