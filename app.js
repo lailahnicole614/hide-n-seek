@@ -13,7 +13,6 @@ const totalGuessesEl = document.getElementById('total');
 
 /* State */
 let correctGuesses = 0;
-let incorrectGuesses = 0;
 let totalGuesses = 0;
 
 /*Events*/
