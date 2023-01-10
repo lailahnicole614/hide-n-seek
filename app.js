@@ -12,20 +12,22 @@ const incorrectGuessesEl = document.getElementById("incorrect-guesses");
 const totalGuessesEl = document.getElementById("total-guesses");
 
 /* State */
-let currentHidingPlace = null;
 let correctGuesses = 0;
 let incorrectGuesses = 0;
 let totalGuesses = 0;
 
 /*Events*/
 shedButton.addEventListener("click", () => {
+    const correctSpot = getRandomHidingSpot(); 
+    handleGuess('button', correctSpot);
   // get a random item to call the 'correct spot'
   // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 treeButton.addEventListener("click", () => {
-
+    const correctSpot = getRandomHidingSpot();
     getRandomHidingSpot();
+    handleGuess('button', correctSpot);
 
   treeContainer.classList.remove("face");
   boulderContainer.classList.remove("face");
@@ -37,7 +39,6 @@ treeButton.addEventListener("click", () => {
 
 
     correctPlace = places [index];
-    const correctSectionEl.classList.add('face');
 
     (correctPlace === 'tree') 
     correctGuesses++; 
@@ -52,10 +53,11 @@ treeButton.addEventListener("click", () => {
 });
 
 boulderButton.addEventListener("click", () => {
+    const correctSpot = getRandomHidingSpot();
   // get a random item to call the 'correct spot'
   // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 
-  handleGuess('button');
+  handleGuess('button', correctSpot);
 });
 
   // initialize state
@@ -69,17 +71,25 @@ const hidingPlaceString = hidingPlaces[index];
   // return that random hiding place string
 
 function handleGuess(userGuess, correctSpot) {
-  // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
-  // we can do that by removing the .face class from all containers
+    // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
+   treeContainer.classList.remove('face');
+   boulderContainer.classList.remove('face');
+   shedContainer.classList.remove('face');
+    // we can do that by removing the .face class from all containers
   // then increment the guesses
   // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
   const correctHidingSpot = document.getElementById('${correctSpot)-container')
+
   // then add the .face css class to that element so that the face shows up
     correctHidingSpot.classList.add('face')
-    console.log(correctHidingSpot);
+
+    correctHidingSpot.classList.add ('face')
   // then if the user guess is correct, increment the correct guesses
   (userGuess === correctHidingSpot) {
     correctGuesses++; 
   }
   // update the DOM to show the new value of wins, losses and total guesses to the user
+  totalGuessesEl.textContent=totalGuesses;
+  correctGuessesEl.textContent=correctGuesses;
+  incorrectGuesses.textContent=correctGuesses;
 }
