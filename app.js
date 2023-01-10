@@ -44,7 +44,7 @@ function getRandomHidingSpot() {
     const places = ['tree', 'boulder', 'shed'];
 
     const index = Math.floor(Math.random() * places.length);
-    const correctSpot = hidingPlaces[index];
+    const correctSpot = places[index];
     return correctSpot;
 }
 function handleGuess(userGuess, correctSpot) {
@@ -64,7 +64,7 @@ function handleGuess(userGuess, correctSpot) {
     correctHidingSpot.classList.add('face');
     // then if the user guess is correct, increment the correct guesses
 
-    if (userGuess === correctHidingSpot) {
+    if (userGuess === correctSpot) {
         correctGuesses++;
     }
     // update the DOM to show the new value of wins, losses and total guesses to the user
