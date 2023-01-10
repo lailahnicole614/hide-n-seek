@@ -40,16 +40,6 @@ boulderButtonEl.addEventListener('click', () => {
     handleGuess('boulder', correctSpot);
 });
 
-// initialize state
-const hidingPlaces = ['tree', 'shed', 'boulder'];
-
-const index = Math.floor(Math.random() * hidingPlaces.length);
-
-// use the random index above and the array of hidingPlaces to get a random hiding place string
-const hidingPlaceString = hidingPlaces[index];
-
-// return that random hiding place string
-
 function getRandomHidingSpot() {
     const places = ['tree', 'boulder', 'shed'];
 
@@ -81,5 +71,5 @@ function handleGuess(userGuess, correctSpot) {
 
     totalGuessesEl.textContent = totalGuesses;
     correctGuessesEl.textContent = correctGuesses;
-    incorrectGuessesEl.textContent = incorrectGuesses;
+    incorrectGuessesEl.textContent = totalGuesses - correctGuesses;
 }
